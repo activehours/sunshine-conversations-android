@@ -44,8 +44,10 @@ jobs:
       uses: android-actions/setup-android@v2
 
     # try auto build action
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v1
+    #  - name: Autobuild
+    #    uses: github/codeql-action/autobuild@v1
+    - name: Build image
+      run: ./gradlew --no-daemon clean
       
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
