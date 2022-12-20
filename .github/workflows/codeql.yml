@@ -46,8 +46,10 @@ jobs:
 #     try auto build action
 #     - name: Autobuild
 #       uses: github/codeql-action/autobuild@v1
-#     - name: Setup Gradle
-#       uses: gradle/gradle-build-action@v2
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
+      with:
+          gradle-version: 6.1.1
       
     - name: Build image
       run: |
