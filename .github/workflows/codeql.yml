@@ -35,21 +35,21 @@ jobs:
         languages: ${{ matrix.language }}
         queries: security-and-quality
 
-    - name: Set up JDK 1.9
+    - name: Set up JDK 19
       uses: actions/setup-java@v1
       with:
-        java-version: 1.9
+          java-version: 19
 
-    - name: Setup Android SDK
-      uses: android-actions/setup-android@v2
+#     - name: Setup Android SDK
+#       uses: android-actions/setup-android@v2
 
 #     try auto build action
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v1
-#     - name: Build image
-#       run: |
-#         chmod +x gradlew
-#         ./gradlew --no-daemon clean
+#     - name: Autobuild
+#       uses: github/codeql-action/autobuild@v1
+    - name: Build image
+      run: |
+        chmod +x gradlew
+        ./gradlew --no-daemon clean
       
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
