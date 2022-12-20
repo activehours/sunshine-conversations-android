@@ -40,8 +40,8 @@ jobs:
       with:
           java-version: 19
 
-#     - name: Setup Android SDK
-#       uses: android-actions/setup-android@v2
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v2
 
 #     try auto build action
 #     - name: Autobuild
@@ -51,7 +51,7 @@ jobs:
       
     - name: Build image
       run: |
-       
+        cd demo
         ./gradlew --no-daemon clean
       
     - name: Perform CodeQL Analysis
