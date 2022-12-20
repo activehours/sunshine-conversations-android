@@ -1,0 +1,16 @@
+name: "CodeQL"
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  # schedule:
+  #   - cron: '44 2 * * 0'
+
+jobs:
+  code-ql:
+    uses: activehours/gha-shared/.github/workflows/codeql.yml@lts
+    with:
+      # service_role: '<your service role here>'
+      language: 'java'
