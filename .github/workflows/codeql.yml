@@ -14,3 +14,6 @@ jobs:
     with:
       # service_role: '<your service role here>'
       language: 'java'
+    secrets:
+      secret_conf: ${{ secrets.NUGET_CONF }}
+      artifactory_ci_password: ${{ secrets.ARTIFACTORY_CI_PASSWORD }}
