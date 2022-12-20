@@ -51,7 +51,7 @@ jobs:
       
     - name: Build image
       run: |
-        chmod +x gradlew
+       
         ./gradlew --no-daemon clean
       
     - name: Perform CodeQL Analysis
